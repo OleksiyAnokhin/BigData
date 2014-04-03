@@ -1,4 +1,4 @@
 BigData
 =======
 
-Alix and Charlotte Gitbub repo for ST599
+Alix and Charlotte Github repo for ST599
