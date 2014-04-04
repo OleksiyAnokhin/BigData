@@ -1,5 +1,9 @@
 #
-# Adventures in Big Data March, 2014: using the hflights data
+# Adventures in Big Data March/April, 2014: using the hflights data
+#
+
+#
+# April 4: Git/Github demo.
 #
 
 library(dplyr)
