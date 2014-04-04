@@ -2,6 +2,8 @@
 # Adventures in Big Data March/April, 2014: using the hflights data
 #
 
+# Charlotte 
+
 #
 # April 4: Git/Github demo.
 #
