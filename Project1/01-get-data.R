@@ -1,5 +1,5 @@
 # Code to download Oregon pop data 2012.
-# part functional part pedagoical
+# part functional part pedagogical
 
 # === download file === #
 # download OR 2012_5yr
@@ -49,4 +49,4 @@ system.time(or4 <- read.csv("data/ss12por-cut.csv",
 # other strategies
 # - read chunks and process out what you need (nlines arg. to read.csv)
 # - bigmemory package
-# - have data in data.base
+# - have data in data base

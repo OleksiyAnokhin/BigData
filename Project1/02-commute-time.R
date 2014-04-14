@@ -3,7 +3,7 @@ library(ggplot2)
 
 # ==== read in OR data ==== #
 
-or <- read.csv("data/ss12por.csv",
+or <- read.csv("data/ss12por-cut.csv",
   stringsAsFactors = FALSE)
 
 or_df <- tbl_df(or)
@@ -11,7 +11,7 @@ or_df <- tbl_df(or)
 # === How does the time to commute vary for people === #
 #        that commute via different methods? 
 
-select(or_df, JWMNP, WAGP, JWTR, COW)
+or_df
 
 # need to match transit type to code
 # codes from data dictionary 
@@ -27,16 +27,21 @@ JWTR_codes <- c("1" = "Car, truck, or van",
   "10" = "Walked",
   "11" = "Worked at home",
   "12" = "Other method")
-or_df <- mutate(or_df, transport_type = JWTR_codes[JWTR])
+
+or_df <- mutate(or_df, transport_type = JWTR_codes[as.character(JWTR)])
 
 # group by type of transport and summarise
 trans_type <- group_by(or_df, JWTR)
+
 time_summary <- summarise(trans_type, 
   transport_type = first(transport_type),
   avg_time = mean(JWMNP, na.rm = TRUE),
   med_time = median(JWMNP, na.rm = TRUE),
   n = n(),
   n_missing = sum(is.na(JWMNP)))
+
+time_summary
+
 mutate(time_summary, prop = n/sum(n))
 # 56% missing, 
 #     "not a worker--not in the labor force, 
@@ -46,6 +51,18 @@ mutate(time_summary, prop = n/sum(n))
 # people who work at home have missing commute time (really 0 mins?)
 # most people (~ 82% ) go by "car, truck or van", then "worked from home"
 # people who walk have short commutes (that's probably why they walk)
+
+# playing with plotting
+time_summary2 <- mutate(time_summary, prop = n/sum(n))
+qplot(transport_type, prop, data =time_summary2) 
+qplot(reorder(transport_type, prop), prop, data =time_summary2) 
+qplot( prop, reorder(transport_type, prop), data =time_summary2) 
+
+# don't care about NAs in this plot
+time_summary3 <- mutate(filter(time_summary, !is.na(transport_type)), prop = n/sum(n))
+qplot( prop, reorder(transport_type, prop), data =time_summary3) 
+
+# ok, really I want this state by state, see 03-mode-by-state.r
 
 # TODO:
 #  - look into distributions, shape, spread etc. boxplots, 5 number summary
