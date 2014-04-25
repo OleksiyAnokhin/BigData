@@ -1,0 +1,103 @@
+\documentclass[12pt]{article}
+
+\usepackage{fullpage}
+\usepackage{latexsym}
+\usepackage{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage[scaled]{uarial}
+\usepackage[hidelinks]{hyperref}
+\renewcommand*\familydefault{\sfdefault}
+\setlength{\headsep}{0.5in}
+\begin{document}
+
+%\frenchspacing
+
+\def\title{ST599, Statistical Computing and Big Data}
+\def\topic{ST599 Project 1}
+%\def\date{Due: Project Report Monday, April 14 9:00am in class)}
+
+\pagestyle{myheadings}
+\markboth{\title}{\topic}
+
+\parindent=0pt
+\parsep=0.5em
+\parskip=0.5em
+
+\newcounter{exprob}
+\setcounter{exprob}{0}
+\def\problem{\refstepcounter{exprob}\par\arabic{exprob}. }
+
+\makeatletter
+\def\figcaption{\refstepcounter{figure}\@dblarg{\@caption{figure}}}
+\makeatother
+
+\def\vfill{\vspace*{\fill}}
+\def\vsd{\vspace{.25in}}
+
+\def\bdm{\begin{displaymath}}
+\def\edm{\end{displaymath}}
+\def\eps{\epsilon}
+\def\sig2{\sigma^2}
+
+\thispagestyle{empty}
+
+\begin{center}\Large{\bf
+ST599 Statistical Computing and Big Data \\
+Spring 2014 Project 2}\\
+\end{center}
+\large
+Project Report Due: \hspace*{14pt}{\it 9:00am Monday, May 12} \\
+Project Presentations: {\it Week of May 12}
+
+\hrulefill
+
+\vsd\normalsize
+
+\section*{Overall Project Goals}
+
+The goals of this project are to work with your team:
+
+\begin{enumerate}
+
+\item To answer a specific question using the flight data set available at XYZ. The question should be answered two ways: (a) by using all of the data to come up with a population-based answer and (b) by using an appropriate sampling technique to come up with a sample-based answer (with appropriate quantification(s) of uncertainty).
+
+\item To produce a short report summarizing your findings.
+
+\item To make a presentation giving more details about your findings to the entire class.
+
+\end{enumerate}
+
+\section*{Project Data}
+
+Data for this project come from the \textcolor{blue}{ \href{}{}}, 
+
+\section*{Project Deliverables}
+
+\begin{enumerate}
+
+\item {\bf By Wednesday, April 30 at 9:00am}: Be able to discuss some ideas about population-based approaches and sampling-based approaches with the entire class.
+
+\item {\bf By Monday, May 5 at 9:00am}: Come up with a detailed sampling plan for addressing your question---this should be a one-page document that you turn in to Charlotte and Alix. 
+
+\item By {\bf Monday, 12 at 9:00am}: Submit a {bf two-page} (reasonable margins and font size) document that summarizes the following:
+
+\begin{enumerate}
+ \item Project/data background and the question that you addressed.
+ \item Your findings from the population-based approach, including a discussion of all the assumptions you made.
+ \item Your findings from the sample-based approach, including a discussion of all the assumptions you made.
+ \item A comparison of the two approaches, as well as obstacles you encountered while implementing one or both approaches, and useful/interesting solutions to overcoming those obstacles.
+ \end{enumerate}
+
+\item {\bf By the week of May 12}: Make a 20 minute presentation of your project. The order in which teams make presentations will be determined randomly during the week of May 5. Each presentation must consist of four sections: (1) Overview and Question of Interest; (2) Population-basded Findings; (3) Sample-based Findings; (4) Discussion, Obstacles and Solutions. These sections may not necessarily be of equal length, but the total presentation length must not be longer than 20 minutes. All members of your team must be prepared to deliver all four sections---assignments of which team member will present which section will be determined randomly immediately before the presentation begins.
+
+Presentation slides must be made available in PDF format so that they can be posted on the course website---{\bf these should be sent to Charlotte or Alix before 9:00am on the day your group presents}.
+
+\item {\bf By Friday, May 16 at 9:50am}: You must provide Charlotte and Alix with access to your GIT repository where we will be able to access your {\bf well-documented} R-code with which we could completely reproduce the content of your summary report and your presentation. 
+
+\item {\bf By Friday, May 16 at 9:50am}: Each group member must turn in a completed Group Member Evaluation Form for all other members on his/her team. 
+
+\end{enumerate}
+
+
+
+\end{document}
