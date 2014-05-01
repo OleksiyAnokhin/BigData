@@ -6,6 +6,12 @@
 
 # R data files from past sessions
 .Rdata
+.Rproj.user
+*.Rproj
 
-# 
-*.zip
+# Mac system files?
+*.DS_Store
+
+# data files for Project 1
+Project1/data/*.zip
+Project1/data/*.csv
